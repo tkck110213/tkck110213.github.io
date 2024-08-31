@@ -1,4 +1,3 @@
-import React from "react"
 
 const Biography = () => {
     const educations = [
@@ -9,6 +8,7 @@ const Biography = () => {
 
     return (
         <div>
+        <h1 className="text-4xl font-semibold flex justify-center items-center mb-14">略歴</h1>
         {educations.map(({id, date, jp, desc}) => ( 
             <div key={id}>
                 <div className="ps-2 my-2 first:mt-0">
