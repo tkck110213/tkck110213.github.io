@@ -12,7 +12,7 @@ const Biography = () => {
             {educations.map(({ id, date, jp, desc }) => (
                 <div key={id} className="w-full max-w-xl">
                     <div className="ps-2 my-2 first:mt-0">
-                        <h3 className="text-xl font-medium uppercase text-gray-500">
+                        <h3 className="text-lg font-medium uppercase text-gray-500">
                             {date}
                         </h3>
                     </div>
