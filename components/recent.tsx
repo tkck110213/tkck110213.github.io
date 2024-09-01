@@ -7,14 +7,14 @@ const Recent = () => {
     return (
         <div>
             <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEW</h2>
-            <div className="mt-15 mb-16 flex justify-center">
+            <div className="mt-15 mb-16 flex flex-col items-center space-y-8">
                 {news.map(({ id, date, desc, title }) => (
-                    <div key={id}>
+                    <div key={id} className="w-full max-w-4xl">
                         <h3 className="text-xl font-medium uppercase text-gray-500">
                             {date}
                         </h3>
-                        <ul className="max-w-4xl space-y-1 text-gray-800 list-disc list-inside">
-                            <li  className="list-disc">
+                        <ul className="space-y-1 text-gray-800 list-disc list-inside">
+                            <li className="list-disc">
                                 {desc}
                                 {title && (
                                     <ul className="list-inside list-circle ml-4">
@@ -25,7 +25,6 @@ const Recent = () => {
                         </ul>
                     </div>
                 ))}
-                
             </div>
         </div>
     );
