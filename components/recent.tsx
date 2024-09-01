@@ -7,18 +7,18 @@ const Recent = () => {
     return (
         <div>
         <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">近況</h2>
+        <div className="mt-15 mb-16 flex justify-center">
         <ul className="max-w-md space-y-1 text-gray-500 list-disc list-inside">
         {news.map(({id, desc, title}) => ( 
             <li key={id}>
                 {desc}
-                <ul>
                     <li>
                         {title}
                     </li>
-                 </ul>
             </li>
         ))}
         </ul>
+        </div>
         </div>
         
     )
