@@ -10,7 +10,7 @@ const Recent = () => {
             <div className="mt-15 mb-16 flex flex-col items-center space-y-8">
                 {news.map(({ id, date, desc, title }) => (
                     <div key={id} className="max-w-xl space-y-1">
-                        <div className="ps-2 my-2 first:mt-0">
+                        <div className="flex justify-start ps-2 my-2 first:mt-0">
                             <h3 className="text-lg font-medium uppercase text-gray-500">
                                 {date}
                             </h3>
