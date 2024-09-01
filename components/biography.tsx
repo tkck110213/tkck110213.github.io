@@ -35,5 +35,6 @@ const Biography = () => {
             ))}
         </div>
     )
+}
 
 export default Biography
