@@ -8,9 +8,10 @@ const Header = () => {
             <span className="ml-3 text-xl">Chota Kameya</span>
             </a>
             <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-            <a className="mr-5 hover:text-gray-900">Top</a>
-            <a className="mr-5 hover:text-gray-900">Publications</a>
-            <a className="mr-5 hover:text-gray-900">Work</a>
+            <a href="#biography" className="mr-5 hover:text-gray-900">Educations</a>
+            <a href="#publications" className="mr-5 hover:text-gray-900">Publications</a>
+            <a href="#awards" className="mr-5 hover:text-gray-900">Awards</a>
+            <a href="#works" className="mr-5 hover:text-gray-900">Works</a>
             </nav>
         </div>
         </header>

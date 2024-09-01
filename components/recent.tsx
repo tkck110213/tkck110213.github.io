@@ -5,7 +5,7 @@ const Recent = () => {
     ];
 
     return (
-        <div className="flex justify-center">
+        <div id="recent" className="flex justify-center">
             <div className="w-full max-w-xl">
                 <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
                 <div className="mt-15 mb-16 space-y-8">
