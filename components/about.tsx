@@ -5,7 +5,8 @@ import Image from "next/image";
 
 const About = () => {
     return (
-        <div className="flex flex-col items-center">
+        <div id="about" className="flex flex-col items-center">
+            <h2 className="text-4xl font-semibold mb-14">About</h2>
             <div className="flex items-center space-x-4">
                 <Image
                     className="w-16 h-16 rounded-full object-cover"
