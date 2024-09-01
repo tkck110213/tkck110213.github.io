@@ -9,7 +9,6 @@ const Biography = () => {
     return (
         <div>
         <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">略歴</h2>
-        <div className="mt-15 mb-16 flex justify-center">
         {educations.map(({id, date, jp, desc}) => ( 
             <div key={id} className="flex-start flex items-center pt-3">
                 <div className="ps-2 my-2 first:mt-0">
@@ -36,7 +35,6 @@ const Biography = () => {
                 </div>
             </div>
         ))}
-        </div>
         </div>
         
     )
