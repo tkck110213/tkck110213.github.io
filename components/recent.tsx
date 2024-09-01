@@ -13,7 +13,7 @@ const Recent = () => {
                         <li key={id} className="list-disc">
                             {desc}
                             {title && (
-                                <ul className="list-inside list-[hyphen] ml-4">
+                                <ul className="list-inside list-circle ml-4">
                                     <li>{title}</li>
                                 </ul>
                             )}
