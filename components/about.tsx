@@ -12,9 +12,9 @@ const About = () => {
                 alt="Profile"
             />
             <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
-            <p className="text-gray-500">2st year master student at The University of Electro-Communications</p>
+            <p className="text-gray-500">1st year doctor student at The University of Electro-Communications</p>
             <p className="mt-4 text-gray-700">
-                認知科学に関心があります．修士課程では，詩の鑑賞の認知過程の解明に向けて計算モデルを構築しています．
+                美的感情の認知過程，芸術と人のインタラクションに興味があります．主に認知科学の領域で研究を進めています．
             </p>
             <div className="mt-4 flex space-x-4 text-gray-600">
                 <a href="https://github.com/tkck110213" aria-label="GitHub">

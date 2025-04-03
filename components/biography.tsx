@@ -7,7 +7,7 @@ const Biography = () => {
         },
         { 
             id: 2, date: "2022/04 - 2025/04", jp: "電気通信大学大学院 情報理工学研究科 情報学専攻 博士前期課程", 
-            lab:"所属：内海・宮本研究室", desc: "研究テーマ：活性拡散ネットワークとズレの解消理論に基づく詩の鑑賞過程の計算モデル"
+            lab:"所属：内海・宮本研究室", desc: "研究テーマ：活性拡散ネットワークとずれの解消理論に基づく詩の鑑賞過程の計算モデル"
         },
         { 
             id: 3, date: "2020/04 - 2022/03", jp: "沖縄工業高等専門学校専攻科 創造システム工学専攻 情報工学コース", 
@@ -40,7 +40,7 @@ const Biography = () => {
                             <p className="mt-1 text-sm text-gray-600">
                                 {lab}
                             </p>
-                            <p className="mt-1 text-sm text-gray-600">
+                            <p className="mt-1 text-xs text-gray-600">
                                 {desc}
                             </p>
                         </div>
