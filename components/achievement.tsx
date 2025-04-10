@@ -10,9 +10,9 @@ const Archivements = () => {
                 <div className="mt-15 mb-16 space-y-8">
                     {publication.map(({id, bib}) => (
                         <div key={id} className="space-y-1">
-                                <h3 className="text-lg font-medium uppercase text-gray-500">
+                                <ol className="list-inside list-circle ml-4">
                                     {bib}
-                                </h3>
+                                </ol>
                         </div>
                     ))}
                  </div>
