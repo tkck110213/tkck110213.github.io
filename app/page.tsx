@@ -3,6 +3,7 @@ import Header from "../components/header"
 import Biography from "../components/biography"
 import Recent from "../components/recent"
 import About from "../components/about"
+import Archivements from "@/components/achievement";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <main className="w-full md:w-3/4 p-4">
           <Recent />
           <Biography />
+          <Archivements />
         </main>
       </div>
     </div>
