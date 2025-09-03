@@ -1,7 +1,7 @@
 const Recent = () => {
     const news = [
         { id: 7, date: "2024/09/11", desc: "第13回認知科学若手の会ワークショップにて発表します．ライトニングトークのセッションです．", title: "" },
-        { id: 6, date: "2025/07/30 - 08/03", desc: "CogSci2025にてポスター発表しました．", title: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi: A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory" },
+        { id: 6, date: "2025/07/30 - 08/03", desc: "CogSci2025にてポスター発表しました．", title: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi: A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory, P2-K-90" },
         { id: 5, date: "2025/04/10", desc: "CogSci2025にてポスター発表でフルペーパー採択されました．", title: "" },
         { id: 4, date: "2025/04/04", desc: "電気通信大学大学院博士後期課程に入学しました．", title: "" },
         { id: 3, date: "2025/03/25", desc: "電気通信大学大学院博士前期課程を修了しました．修士（工学）が授与されました．", title: "" },
