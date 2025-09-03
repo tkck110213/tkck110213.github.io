@@ -11,16 +11,16 @@ const Archivements = () => {
         <div id="recent" className="flex justify-center">
           <div className="w-full max-w-xl">
             <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">
-              Publication
+              Publications
             </h2>
             <div className="mt-15 mb-16 space-y-8">
-              <ol className="list-decimal list-inside space-y-4">
+              <ul className="list-decimal list-inside space-y-4">
                 {publication.map(({ id, bib }) => (
                   <li key={id}>
                     [{id}] {bib}
                   </li>
                 ))}
-              </ol>
+              </ul>
             </div>
           </div>
         </div>
