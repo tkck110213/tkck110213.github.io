@@ -27,9 +27,9 @@ const Archivements = () => {
           </h3>
           <div className="list-decimal list-inside space-y-4">
             {reviewedPublications.map(({ id, bib }) => (
-              <li key={id}>
+              <p key={id}>
                 [{id}] {bib}
-              </li>
+              </p>
             ))}
           </div>
 
@@ -39,9 +39,9 @@ const Archivements = () => {
           </h3>
           <div className="list-decimal list-inside space-y-4">
             {nonReviewedPublications.map(({ id, bib }) => (
-              <li key={id}>
+              <p key={id}>
                 [{id}] {bib}
-              </li>
+              </p>
             ))}
           </div>
 
