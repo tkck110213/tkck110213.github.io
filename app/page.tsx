@@ -1,19 +1,22 @@
 "use client";
 
-import Image from "next/image";
-import Header from "../components/header"
-import Biography from "../components/biography"
-import Recent from "../components/recent"
-import About from "../components/about"
+import { useState } from 'react';
+import Header from "../components/header";
+import Recent from "../components/recent";
+import Biography from "../components/biography";
 import Archivements from "@/components/achievement";
 import Awards from "@/components/awards";
+import About from "../components/about";
 
 export default function Home() {
+  const [activeContent, setActiveContent] = useState('news');
+
   return (
-    <div>
+    <div className="bg-[#F9F9F9]">
       <Header activeContent={activeContent} setActiveContent={setActiveContent} />
+      
       <div className="container mx-auto flex flex-col md:flex-row mt-8">
-        <aside className="w-full md:w-1/4 p-4">
+        <aside className="w-full md/w-1/4 p-4">
           <About />
         </aside>
         
@@ -22,7 +25,7 @@ export default function Home() {
           {activeContent === 'educations' && <Biography />}
           {activeContent === 'publications' && <Archivements />}
           {activeContent === 'awards' && <Awards />}
-          {/* activeContent === 'works' && <Works /> */}
+          {/* 他のコンテンツ */}
         </main>
       </div>
     </div>
