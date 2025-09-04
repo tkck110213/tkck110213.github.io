@@ -32,15 +32,15 @@ const Biography = () => {
                     <div key={id} className="flex gap-x-5">
                         
                         {/* 左側：タイムラインの線とドット */}
-                        <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-indigo-200">
+                        <div className="relative last:after:hidden after:absolute after:top-7 after:bottom-0 after:start-3.5 after:w-px after:-translate-x-[0.5px] after:bg-indigo-800">
                             <div className="relative z-10">
-                                <div className="size-3 rounded-full bg-indigo-700 ring-4 ring-white dark:ring-indigo-700"></div>
+                                <div className="size-3 rounded-full bg-indigo-900 ring-4 ring-white dark:ring-indigo-900"></div>
                             </div>
                         </div>
 
                         {/* 右側：日付と詳細カード */}
                         <div className="grow pt-0.5 pb-8">
-                            <h3 className="flex gap-x-1.5 font-semibold text-indigo-700">
+                            <h3 className="flex gap-x-1.5 font-semibold text-indigo-900">
                                 {date}
                             </h3>
                             <div className="mt-4 w-full bg-white p-5 rounded-xl border border-slate-200 shadow-md hover:shadow-lg transition-shadow duration-300">
