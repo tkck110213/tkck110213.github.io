@@ -24,4 +24,4 @@ const Awards = () => {
   );
 }
 
-export default Archivements;
+export default Awards;
