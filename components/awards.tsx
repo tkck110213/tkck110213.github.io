@@ -1,7 +1,7 @@
 const Awards = () => {
   const awards = [
-    { id: 1, bib: "沖縄工業高等専門学校専攻科 創造システム工学専攻 優秀賞，2022年3月"},
-    { id: 2, bib: "電気通信大学 学生表彰 高玉研究室，2023年3月"},
+    { id: 2, date: "2023.3", title: "電気通信大学 学生表彰 高玉研究室"},
+    { id: 1, date: "2022.3", title: "沖縄工業高等専門学校専攻科 創造システム工学専攻 優秀賞"},
   ];
 
   return (
@@ -11,14 +11,16 @@ const Awards = () => {
           Awards
         </h2>
         <div className="mt-15 mb-16 space-y-8">
-          {/* classNameに "list-decimal" と "list-inside" を追加 */}
-          <ul className="list-decimal list-inside space-y-4">
-            {awards.map(({ id, bib }) => (
-              <li key={id}>
-                {bib}
-              </li>
-            ))}
-          </ul>
+          {awards.map(({ id, date, title }) => (
+            <div key={id} className="flex flex-col"> 
+              <div className="w-full bg-white p-6 rounded-xl border border-slate-200 shadow-md">
+                <div className="flex items-center justify-between space-x-2 mb-3">
+                  <time className="font-semibold text-sm text-slate-500">{date}</time>
+                  <h3 className="font-bold text-slate-800 mb-1">{title}</h3>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
