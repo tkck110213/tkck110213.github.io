@@ -1,5 +1,5 @@
-import { FaGithub, FaEnvelope } from 'react-icons/fa'; 
-import { SiZenn } from 'react-icons/si';
+import { FaGithub, FaEnvelope } from 'react-icons/fa';
+import { SiZenn, SiGooglescholar } from 'react-icons/si'; 
 import Image from "next/image";
 
 const About = () => {
@@ -24,6 +24,9 @@ const About = () => {
                 </a>
                 <a href="mailto:c.kameya@uec.ac.jp" aria-label="Email">
                     <FaEnvelope size={24} />
+                </a>
+                <a href="https://scholar.google.com/citations?user=uneQLVYAAAAJ" aria-label="Google Scholar">
+                    <SiGooglescholar size={24} />
                 </a>
             </div>
         </div>
