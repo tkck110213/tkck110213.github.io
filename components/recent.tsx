@@ -10,19 +10,14 @@ const Recent = () => {
     ];
 
     const today = new Date();
-    // 時刻情報をリセットして、日付のみで比較する
     today.setHours(0, 0, 0, 0);
 
-    // 日付文字列からDateオブジェクトを生成するヘルパー関数
-    // "YYYY/MM/DD - YYYY/MM/DD" のような範囲にも対応
-    const getStartDate = (dateString) => new Date(dateString.split(' - ')[0]);
+    const getStartDate = (dateString: string) => new Date(dateString.split(' - ')[0]);
 
-    // 今後の予定と過去のニュースに分類
     const futureNews = news.filter(item => getStartDate(item.date) >= today);
     const pastNews = news.filter(item => getStartDate(item.date) < today);
 
-    // ニュース項目をレンダリングする共通コンポーネント
-    const NewsItem = ({ id, date, desc, title }) => (
+    const NewsItem = ({ id, date, desc, title }: { id: number; date: string; desc: string; title: string }) => (
         <div key={id} className="space-y-1">
             <div className="ps-2 my-2 first:mt-0">
                 <h3 className="text-lg font-medium uppercase text-gray-500">
@@ -47,19 +42,17 @@ const Recent = () => {
             <div className="w-full max-w-xl">
                 <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
 
-                {/* Future Section */}
                 <div className="mb-16">
                     <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">Future</h3>
                     <div className="space-y-8">
                         {futureNews.length > 0 ? (
                             futureNews.map(item => <NewsItem {...item} key={item.id} />)
                         ) : (
-                            <p className="text-gray-600">今後の予定はありません．</p>
+                            <p className="text-gray-600">今後の予定はありません。</p>
                         )}
                     </div>
                 </div>
 
-                {/* Past Section */}
                 <div>
                     <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">Past</h3>
                     <div className="space-y-8">
