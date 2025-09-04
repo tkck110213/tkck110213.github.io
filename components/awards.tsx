@@ -6,7 +6,7 @@ const Awards = () => {
 
   return (
     <div id="recent" className="flex justify-center">
-      <div className="w-full max-w-xl">
+      <div className="w-full max-w-4xl">
         <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">
           Awards
         </h2>
