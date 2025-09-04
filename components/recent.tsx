@@ -14,9 +14,11 @@ const Recent = () => {
 
     const getStartDate = (dateString: string) => new Date(dateString.split(' - ')[0]);
 
+    // 今後の予定と過去のニュースに分類
     const futureNews = news.filter(item => getStartDate(item.date) >= today);
     const pastNews = news.filter(item => getStartDate(item.date) < today);
 
+    // ニュース項目をレンダリングする共通コンポーネント
     const NewsItem = ({ id, date, desc, title }: { id: number; date: string; desc: string; title: string }) => (
         <div key={id} className="space-y-1">
             <div className="ps-2 my-2 first:mt-0">
@@ -28,9 +30,9 @@ const Recent = () => {
                 <li className="list-disc">
                     {desc}
                     {title && (
-                        <ul className="list-inside list-circle ml-4">
-                            <li>{title}</li>
-                        </ul>
+                        <blockquote className="mt-2 pl-4 py-2 border-l-4 border-gray-300 bg-gray-50">
+                            <p className="text-gray-700 italic">{title}</p>
+                        </blockquote>
                     )}
                 </li>
             </ul>
@@ -38,12 +40,13 @@ const Recent = () => {
     );
 
     return (
-        <div id="recent" className="flex justify-center">
+        <div id="recent" className="flex justify-center mb-16"> {/* ← この行に mb-16 を追加 */}
             <div className="w-full max-w-xl">
                 <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
 
+                {/* Future Section */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">Future</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">今後の予定</h3>
                     <div className="space-y-8">
                         {futureNews.length > 0 ? (
                             futureNews.map(item => <NewsItem {...item} key={item.id} />)
@@ -52,9 +55,9 @@ const Recent = () => {
                         )}
                     </div>
                 </div>
-
+                {/* Past Section */}
                 <div>
-                    <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">Past</h3>
+                    <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">アーカイブ</h3>
                     <div className="space-y-8">
                         {pastNews.map(item => <NewsItem {...item} key={item.id} />)}
                     </div>
