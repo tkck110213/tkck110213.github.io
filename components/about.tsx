@@ -11,8 +11,10 @@ const About = () => {
                     src="/profile.jpg"
                     alt="Profile"
                 />
-                <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
-                <p className="text-gray-500 text-center">First-year Ph.D. student</p>
+                <div className="flex items-center gap-4">
+                    <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
+                    <p className="text-gray-500 text-center">First-year Ph.D. student</p>
+                </div>
             </div>
             <p className="mt-4 text-gray-500 text-center">The University of Electro-Communications</p>
             <p className="mt-4 text-gray-700">
