@@ -18,7 +18,7 @@ const Biography = () => {
     ];
 
     return (
-        <div id="biography" className="flex flex-col items-center">
+        <div id="biography" className="scroll-mt-20 flex flex-col items-center">
             <h2 className="text-4xl font-semibold mb-14">Educations</h2>
             {educations.map(({ id, date, jp, lab, desc }) => (
                 <div key={id} className="w-full max-w-2xl">
