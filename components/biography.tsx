@@ -21,7 +21,7 @@ const Biography = () => {
         <div id="biography" className="flex flex-col items-center">
             <h2 className="text-4xl font-semibold mb-14">Educations</h2>
             {educations.map(({ id, date, jp, lab, desc }) => (
-                <div key={id} className="w-full max-w-4xl">
+                <div key={id} className="w-full max-w-2xl">
                     <div className="ps-2 my-2 first:mt-0">
                         <h3 className="text-lg font-medium uppercase text-gray-500">
                             {date}
@@ -40,7 +40,7 @@ const Biography = () => {
                             <p className="mt-1 text-sm text-gray-600">
                                 {lab}
                             </p>
-                            <p className="mt-1 text-xs text-gray-600">
+                            <p className="mt-1 text-sm text-gray-600">
                                 {desc}
                             </p>
                         </div>
