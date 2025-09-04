@@ -22,16 +22,16 @@ const Recent = () => {
     const NewsItem = ({ id, date, desc, title }: { id: number; date: string; desc: string; title: string }) => (
         <div key={id} className="space-y-1">
             <div className="ps-2 my-2 first:mt-0">
-                <h3 className="text-lg font-medium uppercase text-gray-500">
+                <h3 className="text-lg font-medium uppercase text-indigo-900">
                     {date}
                 </h3>
             </div>
-            <ul className="space-y-1 text-gray-800 list-disc list-inside">
+            <ul className="space-y-1 text-gray-900 list-disc list-inside">
                 <li className="list-disc">
                     {desc}
                     {title && (
                         <blockquote className="mt-2 pl-4 py-2 border-l-4 border-gray-300 bg-gray-50">
-                            <p className="text-gray-700 italic">{title}</p>
+                            <p className="text-gray-800 italic">{title}</p>
                         </blockquote>
                     )}
                 </li>
