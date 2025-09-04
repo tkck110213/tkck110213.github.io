@@ -11,14 +11,14 @@ const About = () => {
                     src="/profile.jpg"
                     alt="Profile"
                 />
-                <div className="flex items-center gap-4">
+                <div className="flex flex-col">
                     <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
                     <p className="text-gray-500 text-center">First-year Ph.D. student</p>
                 </div>
             </div>
             <p className="mt-4 text-gray-500 text-center">The University of Electro-Communications</p>
             <p className="mt-4 text-gray-700">
-                芸術の美的鑑賞プロセスと認知モデルに関心があります．<br /> 主に認知科学の分野で活動しています．
+                芸術の美的鑑賞プロセスと認知モデルに関心があります．主に認知科学の分野で活動しています．
             </p>
             <div className="mt-4 flex space-x-4 text-gray-600">
                 <a href="https://github.com/tkck110213" aria-label="GitHub">
