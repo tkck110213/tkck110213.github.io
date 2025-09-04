@@ -1,3 +1,4 @@
+// ★★★ ここに型定義を記述します ★★★
 type HeaderProps = {
   activeContent: string;
   setActiveContent: (content: string) => void;
@@ -5,11 +6,10 @@ type HeaderProps = {
 
 const Header = ({ activeContent, setActiveContent }: HeaderProps) => {
     
-  // リンクのスタイルを動的に変更するための関数
   const getLinkClass = (contentName: string) => {
     return activeContent === contentName
-      ? "mr-5 text-gray-900 font-semibold border-b-2 border-gray-900" // アクティブな場合
-      : "mr-5 hover:text-gray-900"; // 非アクティブな場合
+      ? "mr-5 text-gray-900 font-semibold border-b-2 border-gray-900"
+      : "mr-5 hover:text-gray-900";
   };
 
   return(
@@ -19,9 +19,6 @@ const Header = ({ activeContent, setActiveContent }: HeaderProps) => {
           <span className="ml-3 text-xl">Chota Kameya</span>
         </a>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-          {/* 2. aタグをbuttonに変更し、onClickイベントを追加 
-               href="#"の代わりに、クリックで状態を更新するようにする
-          */}
           <button onClick={() => setActiveContent('news')} className={getLinkClass('news')}>
             News
           </button>
