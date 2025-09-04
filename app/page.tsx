@@ -4,6 +4,7 @@ import Biography from "../components/biography"
 import Recent from "../components/recent"
 import About from "../components/about"
 import Archivements from "@/components/achievement";
+import Awards from "@/components/awards";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <Recent />
           <Biography />
           <Archivements />
+          <Awards />
         </main>
       </div>
     </div>
