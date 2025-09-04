@@ -11,7 +11,7 @@ const About = () => {
                 alt="Profile"
             />
             <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
-            <p className="text-gray-500">First-year Ph.D. student at The University of Electro-Communications</p>
+            <p className="text-gray-500">First-year Ph.D. student <br> The University of Electro-Communications</p>
             <p className="mt-4 text-gray-700">
                 芸術の美的鑑賞プロセスに関心があります．主に認知科学の領域で活動しています．
             </p>
