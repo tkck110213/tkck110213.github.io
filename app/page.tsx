@@ -11,10 +11,10 @@ export default function Home() {
     <div>
       <Header />
       <div className="container mx-auto flex flex-col md:flex-row mt-8">
-        <aside className="w-full md:w-1/4 p-4">
+        <aside className="w-full md:w-1/6 p-4">
           <About />
         </aside>
-        <main className="w-full md:w-3/4 p-4">
+        <main className="w-full md:w-5/6 p-4">
           <Recent />
           <Biography />
           <Archivements />
