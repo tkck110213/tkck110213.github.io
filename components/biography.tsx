@@ -13,7 +13,8 @@ const Biography = () => {
             id: 3, date: "2020/04 - 2022/03", jp: "沖縄工業高等専門学校専攻科 創造システム工学専攻 情報工学コース", 
             lab: "所属：玉城研究室", desc:"研究テーマ：エコーチェンバー現象の計算モデリング"},
         { 
-            id: 4, date: "2015/04 - 2020/03", jp: "沖縄工業高等専門学校 メディア情報工学科", lab: "", desc: ""
+            id: 4, date: "2015/04 - 2020/03", jp: "沖縄工業高等専門学校 メディア情報工学科", 
+            lab: "鈴木研究室", desc: "利用環境に応じた歌詞に基づく楽曲推薦システムの提案"
         },
     ];
 
@@ -33,7 +34,7 @@ const Biography = () => {
                             <div className="size-2 rounded-full bg-gray-400"></div>
                         </div>
     
-                        <div className="grow pt-0.5 pb-8">
+                        <div className="w-full bg-white p-6 rounded-xl border border-slate-200 shadow-md">
                             <h3 className="flex gap-x-1.5 font-semibold text-gray-800">
                                 {jp}
                             </h3>
