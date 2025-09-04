@@ -16,7 +16,7 @@ export default function Home() {
       <Header activeContent={activeContent} setActiveContent={setActiveContent} />
       
       <div className="container mx-auto flex flex-col md:flex-row mt-8">
-        <aside className="w-full md/w-1/5 p-4">
+        <aside className="w-full md:w-1/5 p-4">
           <About />
         </aside>
         
