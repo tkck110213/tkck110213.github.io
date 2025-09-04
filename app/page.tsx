@@ -16,11 +16,11 @@ export default function Home() {
       <Header activeContent={activeContent} setActiveContent={setActiveContent} />
       
       <div className="container mx-auto flex flex-col md:flex-row mt-8">
-        <aside className="w-full md:w-0.22 p-4">
+        <aside className="w-full md:w-0.25 p-4">
           <About />
         </aside>
         
-        <main className="w-full md:w-0.78 p-4">
+        <main className="w-full md:w-0.75 p-4">
           {activeContent === 'news' && <Recent />}
           {activeContent === 'educations' && <Biography />}
           {activeContent === 'publications' && <Archivements />}
