@@ -14,7 +14,7 @@ const Archivements = () => {
   const nonReviewedPublications = publication.filter(p => p.review === false);
 
   return (
-    <div id="recent" className="flex justify-center">
+    <div id="publications" className="scroll-mt-20 flex justify-center">
       <div className="w-full max-w-4xl">
         <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">
           Publications
