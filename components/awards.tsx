@@ -16,8 +16,8 @@ const Awards = () => {
               <div className="w-full bg-white p-6 rounded-xl border border-slate-200 shadow-md">
                 <div className="flex items-center justify-between space-x-2 mb-3">
                   <time className="font-semibold text-sm text-slate-500">{date}</time>
-                  <h3 className="font-bold text-slate-800 mb-1">{title}</h3>
                 </div>
+                <h3 className="font-bold text-slate-800 mb-1">{title}</h3>
               </div>
             </div>
           ))}
