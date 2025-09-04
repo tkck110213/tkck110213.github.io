@@ -40,7 +40,7 @@ const Recent = () => {
     );
 
     return (
-        <div id="recent" className="flex justify-center mb-16"> {/* ← この行に mb-16 を追加 */}
+        <div id="recent" className="scroll-mt-20 flex justify-center mb-16"> {/* ← この行に mb-16 を追加 */}
             <div className="w-full max-w-4xl">
                 <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
 
