@@ -24,7 +24,7 @@ const About = () => {
                 <a href="https://github.com/tkck110213" aria-label="GitHub">
                     <FaGithub size={24} />
                 </a>
-                <a href="https://zenn.dev" aria-label="Zenn">
+                <a href="https://zenn.dev/tkck110213" aria-label="Zenn">
                     <SiZenn size={24} />
                 </a>
                 <a href="mailto:c.kameya@uec.ac.jp" aria-label="Email">
