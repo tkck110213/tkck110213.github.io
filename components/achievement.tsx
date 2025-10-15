@@ -44,10 +44,14 @@ const Archivements = () => {
                 </span>
               )}
             </div>
-            {/* aタグでタイトルを囲み、クリックでURLに飛ぶようにする */}
-            <a href={url} target="_blank" rel="noopener noreferrer" className="group">
-              <h3 className="font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">{title}</h3>
-            </a>
+            {/* urlが存在する場合のみaタグで囲み、それ以外はh3タグのみ表示 */}
+            {url ? (
+              <a href={url} target="_blank" rel="noopener noreferrer" className="group">
+                <h3 className="font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">{title}</h3>
+              </a>
+            ) : (
+              <h3 className="font-bold text-slate-800 mb-1">{title}</h3>
+            )}
             <p className="text-sm leading-relaxed text-slate-600 mb-2">{authors}</p>
             <p className="text-xs italic text-slate-500">{venue}</p>
           </div>
