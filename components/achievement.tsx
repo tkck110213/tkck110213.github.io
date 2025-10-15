@@ -7,6 +7,7 @@ type Publication = {
   venue: string;
   review: boolean;
   international: boolean;
+  url: string;
 };
 
 const Archivements = () => {
