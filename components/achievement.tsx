@@ -44,8 +44,8 @@ const Archivements = () => {
                 </span>
               )}
             </div>
-            {/* urlが存在する場合のみaタグで囲み、それ以外はh3タグのみ表示 */}
-            {url ? (
+            {/* urlが有効な文字列の場合のみaタグで囲むように、チェックを厳密化 */}
+            {url && url.trim() !== '' ? (
               <a href={url} target="_blank" rel="noopener noreferrer" className="group">
                 <h3 className="font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">{title}</h3>
               </a>
