@@ -33,6 +33,9 @@ const About = () => {
                 <a href="https://scholar.google.com/citations?user=uneQLVYAAAAJ" aria-label="Google Scholar">
                     <SiGooglescholar size={24} />
                 </a>
+                <a href="https://orcid.org/0009-0009-3290-0349" aria-label="ORCID">
+                    <FaOrcid size={24} />
+                </a>
             </div>
         </div>
     );
