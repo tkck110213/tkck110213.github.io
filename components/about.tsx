@@ -13,7 +13,7 @@ const About = () => {
                 />
                 <div className="flex flex-col">
                     <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
-                    <p className="text-gray-500 text-center">First-year Ph.D. student</p>
+                    <p className="text-gray-500 text-center">Ph.D. student</p>
                 </div>
             </div>
             <p className="mt-4 text-gray-500 text-center">The University of Electro-Communications</p>
