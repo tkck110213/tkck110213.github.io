@@ -1,5 +1,6 @@
 const Recent = () => {
     const news = [
+        { id: 8, date: "2025/12/15", desc: "認知科学会誌にCogSci2025参加報告記が掲載されています．<br> https://doi.org/10.11225/cs.2025.051", title: "" },
         { id: 7, date: "2025/09/11", desc: "第13回認知科学若手の会ワークショップで発表します．ライトニングトークのセッションです．", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—，ライトニングトークセッション1, LT3" },
         { id: 6, date: "2025/07/30 - 08/03", desc: "CogSci2025@サンフランシスコでポスター発表しました．", title: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi: A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory, P2-K-90" },
         { id: 5, date: "2025/04/10", desc: "CogSci2025に採択されました（ポスター，フルペーパー）．", title: "" },
