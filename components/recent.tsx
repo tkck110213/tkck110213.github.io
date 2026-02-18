@@ -1,6 +1,7 @@
 const Recent = () => {
     const news = [
         // id: 8 を修正: descからHTMLタグを除去し、urlプロパティを追加
+        { id: 9, date: "2026/02/19", desc: "第3回 認知科学・社心若手リーグで発表いたします．口頭発表のセッションです（O22）", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—", url: "" },
         { id: 8, date: "2025/12/15", desc: "認知科学会誌にCogSci2025参加報告記が掲載されています．", title: "", url: "https://doi.org/10.11225/cs.2025.051" },
         { id: 7, date: "2025/09/11", desc: "第13回認知科学若手の会ワークショップで発表します．ライトニングトークのセッションです．", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—，ライトニングトークセッション1, LT3" },
         { id: 6, date: "2025/07/30 - 08/03", desc: "CogSci2025@サンフランシスコでポスター発表しました．", title: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi: A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory, P2-K-90" },
