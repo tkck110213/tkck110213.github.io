@@ -1,4 +1,4 @@
-import { FaGithub, FaEnvelope, FaOrcid } from 'react-icons/fa';
+import { FaGithub, FaEnvelope, FaOrcid, FaAddressCard } from 'react-icons/fa';
 import { SiZenn, SiGooglescholar } from 'react-icons/si'; 
 import Image from "next/image";
 
