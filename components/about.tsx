@@ -24,8 +24,11 @@ const About = () => {
                 <a href="https://github.com/tkck110213" aria-label="GitHub">
                     <FaGithub size={24} />
                 </a>
-                <a href="https://zenn.dev/tkck110213" aria-label="Zenn">
+                {/* <a href="https://zenn.dev/tkck110213" aria-label="Zenn">
                     <SiZenn size={24} />
+                </a> */}
+                <a href="https://researchmap.jp/c.kameya" aria-label="Researchmap">
+                    <FaAddressCard size={24} />
                 </a>
                 <a href="mailto:c.kameya@uec.ac.jp" aria-label="Email">
                     <FaEnvelope size={24} />
