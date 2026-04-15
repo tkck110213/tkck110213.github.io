@@ -20,25 +20,36 @@ const About = () => {
             <p className="mt-4 text-gray-700">
                 芸術の美的鑑賞プロセスと認知モデルに関心があります．主に認知科学の分野で活動しています．
             </p>
-            <div className="mt-4 flex space-x-4 text-gray-600">
-                <a href="https://github.com/tkck110213" aria-label="GitHub">
-                    <FaGithub size={24} />
-                </a>
-                {/* <a href="https://zenn.dev/tkck110213" aria-label="Zenn">
-                    <SiZenn size={24} />
-                </a> */}
-                <a href="https://researchmap.jp/c.kameya" aria-label="Researchmap">
-                    <FaAddressCard size={24} />
-                </a>
-                <a href="mailto:c.kameya@uec.ac.jp" aria-label="Email">
-                    <FaEnvelope size={24} />
-                </a>
-                <a href="https://scholar.google.com/citations?user=uneQLVYAAAAJ" aria-label="Google Scholar">
-                    <SiGooglescholar size={24} />
-                </a>
-                <a href="https://orcid.org/0009-0009-3290-0349" aria-label="ORCID">
-                    <FaOrcid size={24} />
-                </a>
+            <div className="mt-4 flex flex-col space-y-4 text-gray-600">
+              <a href="https://github.com/tkck110213" aria-label="GitHub" className="flex items-center space-x-3 hover:text-gray-900">
+                <FaGithub size={24} />
+                <span className="font-medium">GitHub</span>
+              </a>
+            
+              {/* <a href="https://zenn.dev/tkck110213" aria-label="Zenn" className="flex items-center space-x-3 hover:text-gray-900">
+                <SiZenn size={24} />
+                <span className="font-medium">Zenn</span>
+              </a> */}
+            
+              <a href="https://researchmap.jp/c.kameya" aria-label="Researchmap" className="flex items-center space-x-3 hover:text-gray-900">
+                <FaAddressCard size={24} />
+                <span className="font-medium">Researchmap</span>
+              </a>
+            
+              <a href="mailto:c.kameya@uec.ac.jp" aria-label="Email" className="flex items-center space-x-3 hover:text-gray-900">
+                <FaEnvelope size={24} />
+                <span className="font-medium">Email</span>
+              </a>
+            
+              <a href="https://scholar.google.com/citations?user=uneQLVYAAAAJ" aria-label="Google Scholar" className="flex items-center space-x-3 hover:text-gray-900">
+                <SiGooglescholar size={24} />
+                <span className="font-medium">Google Scholar</span>
+              </a>
+            
+              <a href="https://orcid.org/0009-0009-3290-0349" aria-label="ORCID" className="flex items-center space-x-3 hover:text-gray-900">
+                <FaOrcid size={24} />
+                <span className="font-medium">ORCID</span>
+              </a>
             </div>
         </div>
     );
