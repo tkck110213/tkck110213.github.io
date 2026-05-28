@@ -13,7 +13,7 @@ type Publication = {
 
 const Archivements = () => {
   const publications: Publication[] = [
-    { id: 6, date: "2026.9（掲載予定）", title: "活性拡散ネットワークに基づく詩の鑑賞過程の計算モデル", authors: "亀谷長太，宮本友樹，内海彰", 
+    { id: 6, date: "2026.9（採録決定）", title: "活性拡散ネットワークに基づく詩の鑑賞過程の計算モデル", authors: "亀谷長太，宮本友樹，内海彰", 
      venue: "認知科学, 33(3)", review: true, international: false, journal: true, url:"" },
     { id: 5, date: "2025.7", title: "A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory", authors: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi", 
       venue: "Proceedings of the 47th Annual Meeting of the Cognitive Science Society (CogSci2025)", review: true, international: true, journal: false, url:"https://escholarship.org/uc/item/8h91t1nz" },
