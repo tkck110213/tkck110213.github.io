@@ -47,9 +47,9 @@ const Biography = () => {
                                 <h4 className="font-bold text-lg text-slate-800">
                                     {jp}
                                 </h4>
-                                <p className="mt-2 text-base text-slate-600">
+                                {/* <p className="mt-2 text-base text-slate-600">
                                     {lab}
-                                </p>
+                                </p> */}
                                 <p className="mt-1 text-sm text-slate-500">
                                     {desc}
                                 </p>
