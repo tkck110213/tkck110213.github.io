@@ -1,7 +1,7 @@
 const Recent = () => {
     const news = [
         // id: 8 を修正: descからHTMLタグを除去し、urlプロパティを追加
-        { id: 10, date: "2026/09/15", desc: "詩の鑑賞過程の計算モデルに関する研究が，和文誌「認知科学」に採録されました．J-STAGEにて全文公開されています．", title: "亀谷長太，宮本友樹，内海彰：活性拡散ネットワークに基づく詩の鑑賞過程の計算モデル，認知科学，Vol. 33, No. 3, pp. 564-580, 2026", url: " https://doi.org/10.11225/cs.2026.036" },
+        { id: 10, date: "2026/09/15", desc: "詩の鑑賞過程の計算モデルに関する研究が，和文誌「認知科学」に採録されました．J-STAGEにて全文公開されています．", title: "亀谷長太，宮本友樹，内海彰：活性拡散ネットワークに基づく詩の鑑賞過程の計算モデル，認知科学，Vol. 33, No. 3, pp. 564-580, 2026", url: "https://doi.org/10.11225/cs.2026.036" },
         { id: 9, date: "2026/02/19", desc: "第3回 認知科学・社心若手リーグで発表いたします．口頭発表のセッションです（O22）", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—", url: "" },
         { id: 8, date: "2025/12/15", desc: "認知科学会誌にCogSci2025参加報告記が掲載されています．", title: "", url: "https://doi.org/10.11225/cs.2025.051" },
         { id: 7, date: "2025/09/11", desc: "第13回認知科学若手の会ワークショップで発表します．ライトニングトークのセッションです．", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—，ライトニングトークセッション1, LT3" },
@@ -25,9 +25,8 @@ const Recent = () => {
     const pastNews: NewsItemType[] = news.filter(item => getStartDate(item.date) < today);
 
     // ニュース項目をレンダリングする共通コンポーネント
-    // urlプロパティを追加
-    const NewsItem = ({ id, date, desc, title, url }: NewsItemType) => (
-        <div key={id} className="space-y-1">
+    const NewsItem = ({ date, desc, title, url }: NewsItemType) => (
+        <div className="space-y-1">
             <div className="ps-2 my-2 first:mt-0">
                 <h3 className="text-lg font-medium uppercase text-indigo-900">
                     {date}
@@ -65,16 +64,18 @@ const Recent = () => {
                 <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
 
                 {/* Future Section */}
-                {futureNews.length > 0 ? (
+                {futureNews.length > 0 && (
                      <div className="mb-16">
                         <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">今後の予定</h3>
-                        futureNews.map(item => <NewsItem {...item} key={item.id} />
+                        {futureNews.map(item => <NewsItem {...item} key={item.id} />)}
                     </div>
                 )}
                     
                 {/* Past Section */}
                 <div>
-                    {futureNews.length > 0 ? (<h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">過去のお知らせ</h3> )}
+                    {futureNews.length > 0 && (
+                        <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">過去のお知らせ</h3>
+                    )}
                     <div className="space-y-8">
                         {pastNews.map(item => <NewsItem {...item} key={item.id} />)}
                     </div>
