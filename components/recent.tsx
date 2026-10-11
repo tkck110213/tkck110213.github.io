@@ -65,19 +65,16 @@ const Recent = () => {
                 <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
 
                 {/* Future Section */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">今後の予定</h3>
-                    <div className="space-y-8">
-                        {futureNews.length > 0 ? (
-                            futureNews.map(item => <NewsItem {...item} key={item.id} />)
-                        ) : (
-                            <p className="text-gray-600">今後の予定はありません。</p>
-                        )}
+                {futureNews.length > 0 ? (
+                     <div className="mb-16">
+                        <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">今後の予定</h3>
+                        futureNews.map(item => <NewsItem {...item} key={item.id} />
                     </div>
-                </div>
+                )}
+                    
                 {/* Past Section */}
                 <div>
-                    <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">アーカイブ</h3>
+                    {futureNews.length > 0 ? (<h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">過去のお知らせ</h3> )}
                     <div className="space-y-8">
                         {pastNews.map(item => <NewsItem {...item} key={item.id} />)}
                     </div>
