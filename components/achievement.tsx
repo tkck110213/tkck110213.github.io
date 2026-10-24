@@ -181,17 +181,17 @@ export default function Archivements() {
   const sections = [
     {
       number: "01",
-      title: "Journal Articles",
+      title: "学術論文（Journal Articles）",
       items: journalPublications,
     },
     {
       number: "02",
-      title: "International Conferences",
+      title: "国際会議（International Conferences）",
       items: internationalPublications,
     },
     {
       number: "03",
-      title: "Domestic Conferences",
+      title: "国内会議（Domestic Conferences）",
       items: domesticPublications,
     },
   ];
