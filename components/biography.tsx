@@ -1,4 +1,3 @@
-
 type Education = {
   id: number;
   date: string;
@@ -47,7 +46,7 @@ export default function Biography() {
       className="w-full scroll-mt-24"
     >
       {/* Section metadata */}
-      <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
+      {/* <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
         <span className="font-mono tracking-wide">
           ACADEMIC BACKGROUND
         </span>
@@ -55,7 +54,7 @@ export default function Biography() {
         <span className="font-mono">
           {String(educations.length).padStart(2, "0")} ENTRIES
         </span>
-      </div>
+      </div> */}
 
       {/* Education list */}
       <div className="border-t border-[#B7B1A7]">
