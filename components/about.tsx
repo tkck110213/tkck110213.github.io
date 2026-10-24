@@ -55,7 +55,7 @@ export default function About() {
         {/* Name and affiliation */}
         <div className="min-w-0">
           <h1 className="font-serif text-2xl font-normal tracking-tight text-[#242424] sm:text-3xl">
-            Chota Kameya
+            亀谷長太 (Chota Kameya)
           </h1>
 
           <p className="mt-1 text-sm text-[#777168]">
@@ -63,13 +63,13 @@ export default function About() {
           </p>
 
           <p className="mt-1 text-sm leading-relaxed text-[#777168]">
-            The University of Electro-Communications
+            電気通信大学 / The University of Electro-Communications
           </p>
         </div>
       </div>
 
       {/* Introduction */}
-      <p className="mt-6 max-w-2xl text-sm leading-7 text-[#494640] sm:text-base">
+      <p className="mt-6 text-sm leading-7 text-[#494640] text-pretty sm:text-base">
         芸術の美的鑑賞プロセスと認知モデルに関心があります.
         主に認知科学の分野で活動しています.
       </p>
