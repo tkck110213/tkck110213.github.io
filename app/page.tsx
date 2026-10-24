@@ -86,7 +86,7 @@ export default function Home() {
             About
           </h2>
         
-          <div className="w-full">
+          <div className="mx-auto w-full max-w-4xl">
             <About />
           </div>
         </section>
