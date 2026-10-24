@@ -72,32 +72,26 @@ export default function About() {
         主に認知科学の分野で活動しています.
       </p>
       
-    {/* Social links */}
-    <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-4 sm:gap-x-7">
-      {links.map(({ name, url, icon: Icon }) => {
-        const isExternal = !url.startsWith("mailto:");
-    
-        return (
-          <a
-            key={name}
-            href={url}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-            aria-label={name}
-            className="inline-flex shrink-0 items-center gap-2 rounded-md text-sm text-[#777168] transition-colors duration-200 hover:text-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A79D90]"
-          >
-            <Icon
-              size={18}
-              className="shrink-0"
-              aria-hidden="true"
-            />
-            <span className="whitespace-nowrap">
-              {name}
-            </span>
-          </a>
-        );
-      })}
+     {/* Social links */}
+      <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-4 sm:gap-x-7">
+        {links.map(({ name, url, icon: Icon }) => {
+          const isExternal = !url.startsWith("mailto:");
+
+          return (
+            <a
+              key={name}
+              href={url}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noopener noreferrer" : undefined}
+              aria-label={name}
+              className="inline-flex shrink-0 items-center gap-2 rounded-md text-sm text-[#777168] transition-colors duration-200 hover:text-[#242424]"
+            >
+              <Icon size={18} className="shrink-0" aria-hidden="true" />
+              <span className="whitespace-nowrap">{name}</span>
+            </a>
+          );
+        })}
+      </div>
     </div>
-  </div> {/* 最初のdivを閉じる */}
   );
 }
