@@ -98,17 +98,20 @@ export default function Home() {
             key={section.id}
             id={section.id}
             aria-labelledby={`${section.id}-title`}
-            className="scroll-mt-32 border-b border-[#D8D5CE] py-16 md:scroll-mt-24 md:py-24"
-          >
-
+            className="scroll-mt-32 pb-14 pt-6 md:scroll-mt-24 md:pb-20 md:pt-8"
+          > 
             {/* Section heading */}
             <div className="mb-10 md:mb-12">
               <div className="flex items-center gap-5 rounded-sm bg-[#F5F3EF] px-6 py-7 sm:px-8 sm:py-9">
-                <span className="h-9 w-[3px] shrink-0 rounded-full bg-[#C4BAAC]" />
-              
+            
+                <span
+                  aria-hidden="true"
+                  className="h-9 w-[3px] shrink-0 rounded-full bg-[#C4BAAC]"
+                />
+            
                 <h2
                   id={`${section.id}-title`}
-                  className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl"
+                  className="font-[family-name:var(--font-manrope)] text-3xl font-semibold tracking-tight text-[#242424] sm:text-4xl"
                 >
                   {section.title}
                 </h2>
