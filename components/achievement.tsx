@@ -200,14 +200,14 @@ export default function Archivements() {
     <div id="publications" className="w-full scroll-mt-24">
 
       {/* Section metadata */}
-      <div className="mb-14 flex items-center justify-between gap-4 text-xs text-[#918A80]">
+      {/* <div className="mb-14 flex items-center justify-between gap-4 text-xs text-[#918A80]">
         <span className="font-mono tracking-wide">
           RESEARCH OUTPUT
         </span>
         <span className="font-mono">
           {String(publications.length).padStart(2, "0")} PUBLICATIONS
         </span>
-      </div>
+      </div> */}
 
       {/* Sections */}
       <div className="space-y-16">
@@ -220,9 +220,9 @@ export default function Archivements() {
               <div className="mb-7 flex flex-wrap items-end justify-between gap-3">
 
                 <div className="flex items-center gap-4">
-                  <span className="font-mono text-xs text-[#918A80]">
+                  {/* <span className="font-mono text-xs text-[#918A80]">
                     {section.number}
-                  </span>
+                  </span> */}
 
                   <h2 className="text-xl font-medium tracking-tight text-[#242424] sm:text-2xl">
                     {section.title}
