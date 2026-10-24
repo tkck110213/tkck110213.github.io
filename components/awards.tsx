@@ -41,15 +41,15 @@ export default function Awards() {
       className="w-full scroll-mt-24"
     >
       {/* Section metadata */}
-      <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
-        <span className="font-mono tracking-wide">
+      {/* <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
+        /* {/* <span className="font-mono tracking-wide">
           HONORS & RECOGNITION
-        </span>
+        </span> */} */
 
         <span className="font-mono">
           {String(awards.length).padStart(2, "0")} ENTRIES
         </span>
-      </div>
+      </div> */}
 
       {/* Awards list */}
       <div className="border-t border-[#B7B1A7]">
