@@ -1,174 +1,170 @@
 
-"use client";
-
-import { useState, useEffect, useRef } from "react";
-
-import Header from "../components/header";
+import About from "../components/about";
 import Recent from "../components/recent";
 import Biography from "../components/biography";
 import Archivements from "@/components/achievement";
 import Awards from "@/components/awards";
-import About from "../components/about";
 
-type ContentType =
-  | "news"
-  | "educations"
-  | "publications"
-  | "awards";
+const navigation = [
+  { label: "About", href: "#profile" },
+  { label: "News", href: "#news" },
+  { label: "Biography", href: "#education" },
+  { label: "Publications", href: "#research" },
+  { label: "Awards", href: "#honors" },
+];
 
-const sections: Record<
-  ContentType,
-  { index: string; title: string; description: string }
-> = {
-  news: {
-    index: "01",
+const sections = [
+  {
+    id: "news",
+    number: "02",
     title: "News",
     description: "Latest updates & activities",
+    component: <Recent />,
   },
-  educations: {
-    index: "02",
+  {
+    id: "education",
+    number: "03",
     title: "Biography",
     description: "Education & experience",
+    component: <Biography />,
   },
-  publications: {
-    index: "03",
+  {
+    id: "research",
+    number: "04",
     title: "Publications",
-    description: "Research & presentations",
+    description: "Research papers & presentations",
+    component: <Archivements />,
   },
-  awards: {
-    index: "04",
+  {
+    id: "honors",
+    number: "05",
     title: "Awards",
     description: "Honors & recognition",
+    component: <Awards />,
   },
-};
+];
 
 export default function Home() {
-  const [activeContent, setActiveContent] =
-    useState<ContentType>("news");
-
-  const sectionRef = useRef<HTMLElement>(null);
-  const isInitialRender = useRef(true);
-
-  const current = sections[activeContent];
-
-  useEffect(() => {
-    if (isInitialRender.current) {
-      isInitialRender.current = false;
-      return;
-    }
-
-    sectionRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, [activeContent]);
-
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#242424]">
-
-      {/* Navigation */}
-      <div className="sticky top-0 z-50 border-b border-[#E1DED7] bg-[#F7F6F2]/95 backdrop-blur-md">
+    <div
+      id="top"
+      className="min-h-screen bg-[#F7F6F2] text-[#242424]"
+    >
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-[#E1DED7] bg-[#F7F6F2]/95 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
-          <Header
-            activeContent={activeContent}
-            setActiveContent={(value: string) =>
-              setActiveContent(value as ContentType)
-            }
-          />
+
+          <div className="flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between md:gap-8">
+
+            {/* Logo */}
+            <a
+              href="#top"
+              className="w-fit font-serif text-lg font-medium tracking-tight text-[#242424] transition-opacity hover:opacity-60"
+            >
+              Chota Kameya
+              <span className="text-[#A79D90]">.</span>
+            </a>
+
+            {/* Navigation */}
+            <nav
+              aria-label="Main navigation"
+              className="flex items-center gap-6 overflow-x-auto pb-1 md:gap-8 md:pb-0"
+            >
+              {navigation.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="shrink-0 whitespace-nowrap border-b border-transparent py-1 text-sm text-[#777168] transition-colors duration-200 hover:border-[#242424] hover:text-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
         </div>
-      </div>
+      </header>
 
       <main className="mx-auto max-w-6xl px-6 md:px-10">
 
-        {/* Hero / Profile */}
-        <section className="border-b border-[#D8D5CE] pb-16 pt-16 md:pb-24 md:pt-24">
-          <div className="mb-8 flex items-center gap-3">
-            <span className="h-px w-8 bg-[#A49A8B]" />
-            <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-[#8E877C]">
-              Research Portfolio
-            </span>
-          </div>
-
-          <div className="max-w-4xl">
-            <About />
-          </div>
-        </section>
-
-        {/* Content */}
+        {/* About */}
         <section
-          ref={sectionRef}
-          id="content"
-          className="scroll-mt-24 py-16 md:py-24"
+          id="profile"
+          aria-labelledby="profile-title"
+          className="scroll-mt-32 border-b border-[#D8D5CE] py-12 md:scroll-mt-24 md:py-16"
         >
-          {/* Section heading */}
-          <div className="mb-12 md:mb-16">
-
-            <div className="mb-6 flex items-center justify-between gap-4">
-              <span className="font-mono text-xs text-[#918A80]">
-                {current.index} / INDEX
-              </span>
-
-              <span className="text-right text-xs tracking-wide text-[#918A80]">
-                {current.description}
-              </span>
-            </div>
-
-            <h1 className="font-serif text-5xl font-normal tracking-tight md:text-7xl lg:text-8xl">
-              {current.title}
-              <span className="text-[#A79D90]">.</span>
-            </h1>
-
-            <div className="mt-10 h-px w-full bg-[#D8D5CE]" />
+          <div className="mb-8 flex items-center gap-4">
+            <span className="font-mono text-xs text-[#918A80]">
+              01 / ABOUT
+            </span>
+            <span className="h-px flex-1 bg-[#D8D5CE]" />
           </div>
 
-          {/* Content body */}
-          <div
-            key={activeContent}
-            className="mx-auto min-h-[40vh] max-w-4xl animate-[fadeIn_0.3s_ease-out]"
-          >
-            {activeContent === "news" && <Recent />}
+          <h2 id="profile-title" className="sr-only">
+            About
+          </h2>
 
-            {activeContent === "educations" && (
-              <Biography />
-            )}
-
-            {activeContent === "publications" && (
-              <Archivements />
-            )}
-
-            {activeContent === "awards" && <Awards />}
-          </div>
+          <About />
         </section>
+
+        {/* Main sections */}
+        <div>
+          {sections.map((section) => (
+            <section
+              key={section.id}
+              id={section.id}
+              aria-labelledby={`${section.id}-title`}
+              className="scroll-mt-32 border-b border-[#D8D5CE] py-16 md:scroll-mt-24 md:py-24"
+            >
+              {/* Section heading */}
+              <div className="mb-12">
+
+                {/* Section metadata */}
+                <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+                  <span className="font-mono text-xs tracking-wide text-[#918A80]">
+                    {section.number} / INDEX
+                  </span>
+
+                  <span className="text-xs text-[#918A80]">
+                    {section.description}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h2
+                  id={`${section.id}-title`}
+                  className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl md:text-6xl"
+                >
+                  {section.title}
+                  <span className="text-[#A79D90]">.</span>
+                </h2>
+
+                <div className="mt-8 h-px w-full bg-[#D8D5CE]" />
+              </div>
+
+              {/* Content */}
+              <div className="mx-auto w-full max-w-4xl">
+                {section.component}
+              </div>
+            </section>
+          ))}
+        </div>
 
         {/* Footer */}
-        <footer className="flex flex-col justify-between gap-3 border-t border-[#D8D5CE] py-10 text-xs text-[#918A80] sm:flex-row">
-          <span>Research Portfolio</span>
-          <span>© {new Date().getFullYear()}</span>
+        <footer className="flex flex-col gap-5 py-10 text-xs text-[#918A80] sm:flex-row sm:items-center sm:justify-between">
+
+          <span>
+            © {new Date().getFullYear()} Chota Kameya
+          </span>
+
+          <a
+            href="#top"
+            className="inline-flex w-fit items-center gap-2 transition-colors hover:text-[#242424]"
+          >
+            Back to top
+            <span aria-hidden="true">↑</span>
+          </a>
         </footer>
       </main>
-
-      <style jsx global>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          html {
-            scroll-behavior: auto !important;
-          }
-
-          * {
-            animation-duration: 0.01ms !important;
-          }
-        }
-      `}</style>
     </div>
   );
 }
