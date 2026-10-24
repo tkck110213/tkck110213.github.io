@@ -89,7 +89,7 @@ function formatDate(dateString: string): string {
 
 function NewsEntry({ item }: { item: NewsItem }) {
   return (
-    <article className="group grid grid-cols-1 gap-3 border-b border-[#D8D5CE] py-7 first:pt-0 sm:grid-cols-[130px_minmax(0,1fr)] sm:gap-8">
+    <article className="group grid grid-cols-1 gap-3 border-b border-[#D8D5CE] py-8 sm:grid-cols-[130px_minmax(0,1fr)] sm:gap-8">
 
       {/* Date */}
       <div>
