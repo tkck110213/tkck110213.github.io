@@ -9,24 +9,21 @@ import Awards from "@/components/awards";
 import About from "../components/about";
 
 export default function Home() {
-  const [activeContent, setActiveContent] = useState('news');
-
   return (
-    <div className="bg-[#F9F9F9]">
-      <Header activeContent={activeContent} setActiveContent={setActiveContent} />
-      
-      <div className="container mx-auto flex flex-col md:flex-row mt-8">
-        <aside className="w-full md:w-1/4 p-4">
+    <div className="bg-[#F9F9F9] min-h-screen p-4 md:p-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* プロフィールカード（大きめ） */}
+        <div className="md:col-span-1 bg-white p-6 rounded-2xl shadow-sm">
           <About />
-        </aside>
-        
-        <main className="w-full md:w-3/4 p-4">
-          {activeContent === 'news' && <Recent />}
-          {activeContent === 'educations' && <Biography />}
-          {activeContent === 'publications' && <Archivements />}
-          {activeContent === 'awards' && <Awards />}
-          {/* 他のコンテンツ */}
-        </main>
+        </div>
+        {/* ニュースカード */}
+        <div className="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm">
+          <Recent />
+        </div>
+        {/* 業績・受賞歴カード */}
+        <div className="md:col-span-3 bg-white p-6 rounded-2xl shadow-sm">
+          <Archivements />
+        </div>
       </div>
     </div>
   );
