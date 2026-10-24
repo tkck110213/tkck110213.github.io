@@ -154,14 +154,14 @@ export default function Recent() {
     <div id="recent" className="w-full scroll-mt-24">
 
       {/* Archive metadata */}
-      <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
+      {/* <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
         <span className="font-mono tracking-wide">
           ARCHIVE / NEWS
         </span>
         <span className="font-mono">
           {String(news.length).padStart(2, "0")} ENTRIES
         </span>
-      </div>
+      </div> */}
 
       {/* Upcoming */}
       {futureNews.length > 0 && (
