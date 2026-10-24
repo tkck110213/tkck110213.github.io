@@ -118,9 +118,6 @@ function PublicationList({ items }: { items: Publication[] }) {
                   : "border-[#D8D5CE] bg-[#EEECE7] text-[#777168]"
               }`}
             >
-              <span aria-hidden="true">
-                {item.review ? "✓" : "−"}
-              </span>
               {item.review ? "査読あり" : "査読なし"}
             </span>
 
