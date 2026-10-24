@@ -16,30 +16,22 @@ const navigation = [
 const sections = [
   {
     id: "news",
-    number: "02",
     title: "News",
-    description: "Latest updates & activities",
     component: <Recent />,
   },
   {
     id: "education",
-    number: "03",
     title: "Biography",
-    description: "Education & experience",
     component: <Biography />,
   },
   {
     id: "research",
-    number: "04",
     title: "Publications",
-    description: "Research papers & presentations",
     component: <Archivements />,
   },
   {
     id: "honors",
-    number: "05",
     title: "Awards",
-    description: "Honors & recognition",
     component: <Awards />,
   },
 ];
@@ -53,7 +45,6 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-[#E1DED7] bg-[#F7F6F2]/95 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
-
           <div className="flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between md:gap-8">
 
             {/* Logo */}
@@ -100,55 +91,43 @@ export default function Home() {
         </section>
 
         {/* Main sections */}
-        <div>
-          {sections.map((section) => (
-            <section
-              key={section.id}
-              id={section.id}
-              aria-labelledby={`${section.id}-title`}
-              className="scroll-mt-32 border-b border-[#D8D5CE] py-16 md:scroll-mt-24 md:py-24"
-            >
-              
-                {/* Section heading */}
-                <div className="mb-10 md:mb-12">
-                  <div className="flex items-center gap-5 rounded-sm bg-[#EDEAE4] px-6 py-7 sm:px-8 sm:py-9">
-                
-                    {/* Accent line */}
-                    <span className="h-9 w-[3px] shrink-0 rounded-full bg-[#9B8B77]" />
-                
-                    {/* Title */}
-                    <h2
-                      id={`${section.id}-title`}
-                      className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl"
-                    >
-                      {section.title}
-                    </h2>
-                  </div>
-                </div>
+        {sections.map((section) => (
+          <section
+            key={section.id}
+            id={section.id}
+            aria-labelledby={`${section.id}-title`}
+            className="scroll-mt-32 border-b border-[#D8D5CE] py-16 md:scroll-mt-24 md:py-24"
+          >
+
+            {/* Section heading */}
+            <div className="mb-10 md:mb-12">
+              <div className="flex items-center gap-5 rounded-sm bg-[#EDEAE4] px-6 py-7 sm:px-8 sm:py-9">
+
+                {/* Accent line */}
+                <span
+                  aria-hidden="true"
+                  className="h-9 w-[3px] shrink-0 rounded-full bg-[#9B8B77]"
+                />
 
                 {/* Title */}
                 <h2
                   id={`${section.id}-title`}
-                  className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl md:text-6xl"
+                  className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl"
                 >
                   {section.title}
-                  <span className="text-[#A79D90]">.</span>
                 </h2>
-
-                <div className="mt-8 h-px w-full bg-[#D8D5CE]" />
               </div>
+            </div>
 
-              {/* Content */}
-              <div className="mx-auto w-full max-w-4xl">
-                {section.component}
-              </div>
-            </section>
-          ))}
-        </div>
+            {/* Content */}
+            <div className="mx-auto w-full max-w-4xl">
+              {section.component}
+            </div>
+          </section>
+        ))}
 
         {/* Footer */}
         <footer className="flex flex-col gap-5 py-10 text-xs text-[#918A80] sm:flex-row sm:items-center sm:justify-between">
-
           <span>
             © {new Date().getFullYear()} Chota Kameya
           </span>
