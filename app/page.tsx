@@ -40,10 +40,10 @@ export default function Home() {
   return (
     <div
       id="top"
-      className="min-h-screen bg-[#F7F6F2] text-[#242424]"
+      className="min-h-screen bg-[#FCFBF9] text-[#242424]"
     >
       {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-[#E1DED7] bg-[#F7F6F2]/95 backdrop-blur-md">
+      <header className="sticky top-0 z-50 border-b border-[#E1DED7] bg-[#FCFBF9]/95 backdrop-blur-md">
         <div className="mx-auto max-w-6xl px-6 md:px-10">
           <div className="flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between md:gap-8">
 
@@ -101,15 +101,9 @@ export default function Home() {
 
             {/* Section heading */}
             <div className="mb-10 md:mb-12">
-              <div className="flex items-center gap-5 rounded-sm bg-[#EDEAE4] px-6 py-7 sm:px-8 sm:py-9">
-
-                {/* Accent line */}
-                <span
-                  aria-hidden="true"
-                  className="h-9 w-[3px] shrink-0 rounded-full bg-[#9B8B77]"
-                />
-
-                {/* Title */}
+              <div className="flex items-center gap-5 rounded-sm bg-[#F5F3EF] px-6 py-7 sm:px-8 sm:py-9">
+                <span className="h-9 w-[3px] shrink-0 rounded-full bg-[#C4BAAC]" />
+              
                 <h2
                   id={`${section.id}-title`}
                   className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl"
