@@ -76,19 +76,21 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 md:px-10">
-
         {/* About */}
         <section
           id="profile"
           aria-labelledby="profile-title"
-          className="scroll-mt-32 border-b border-[#D8D5CE] py-12 md:scroll-mt-24 md:py-16"
+          className="scroll-mt-32 py-8 md:scroll-mt-24 md:py-12"
         >
           <h2 id="profile-title" className="sr-only">
             About
           </h2>
-
-          <About />
+        
+          <div className="w-full">
+            <About />
+          </div>
         </section>
+
 
         {/* Main sections */}
         {sections.map((section) => (
