@@ -1,88 +1,196 @@
-const Recent = () => {
-    const news = [
-        // id: 8 を修正: descからHTMLタグを除去し、urlプロパティを追加
-        { id: 10, date: "2026/09/15", desc: "詩の鑑賞過程の計算モデルに関する研究が，和文誌「認知科学」に採録されました．J-STAGEにて全文公開されています．", title: "亀谷長太，宮本友樹，内海彰：活性拡散ネットワークに基づく詩の鑑賞過程の計算モデル，認知科学，Vol. 33, No. 3, pp. 564-580, 2026", url: "https://doi.org/10.11225/cs.2026.036" },
-        { id: 9, date: "2026/02/19", desc: "第3回 認知科学・社心若手リーグで発表いたします．口頭発表のセッションです（O22）", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—", url: "" },
-        { id: 8, date: "2025/12/15", desc: "認知科学会誌にCogSci2025参加報告記が掲載されています．", title: "", url: "https://doi.org/10.11225/cs.2025.051" },
-        { id: 7, date: "2025/09/11", desc: "第13回認知科学若手の会ワークショップで発表します．ライトニングトークのセッションです．", title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—，ライトニングトークセッション1, LT3" },
-        { id: 6, date: "2025/07/30 - 08/03", desc: "CogSci2025@サンフランシスコでポスター発表しました．", title: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi: A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory, P2-K-90" },
-        { id: 5, date: "2025/04/10", desc: "CogSci2025に採択されました（ポスター，フルペーパー）．", title: "" },
-        { id: 4, date: "2025/04/04", desc: "電気通信大学大学院博士後期課程に入学しました．", title: "" },
-        { id: 3, date: "2025/03/25", desc: "電気通信大学大学院博士前期課程を修了しました．修士（工学）が授与されました．", title: "" },
-        { id: 2, date: "2024/10/12 - 10/14", desc: "日本認知科学会第41回大会にて発表しました．", title: "亀谷長太，宮本友樹，内海彰: 活性拡散ネットワークとずれの解消理論に基づく詩の鑑賞過程の計算モデル，O-6-4" },
-        { id: 1, date: "2024/08/31", desc: "サイトを開設しました．", title: "" },
-    ];
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+type NewsItem = {
+  id: number;
+  date: string;
+  desc: string;
+  title: string;
+  url?: string;
+};
 
-    const getStartDate = (dateString: string) => new Date(dateString.split(' - ')[0]);
+const news: NewsItem[] = [
+  {
+    id: 10,
+    date: "2026/09/15",
+    desc: "詩の鑑賞過程の計算モデルに関する研究が，和文誌「認知科学」に採録されました．J-STAGEにて全文公開されています．",
+    title: "亀谷長太，宮本友樹，内海彰：活性拡散ネットワークに基づく詩の鑑賞過程の計算モデル，認知科学，Vol. 33, No. 3, pp. 564-580, 2026",
+    url: "https://doi.org/10.11225/cs.2026.036",
+  },
+  {
+    id: 9,
+    date: "2026/02/19",
+    desc: "第3回 認知科学・社心若手リーグで発表いたします．口頭発表のセッションです（O22）",
+    title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—",
+  },
+  {
+    id: 8,
+    date: "2025/12/15",
+    desc: "認知科学会誌にCogSci2025参加報告記が掲載されています．",
+    title: "",
+    url: "https://doi.org/10.11225/cs.2025.051",
+  },
+  {
+    id: 7,
+    date: "2025/09/11",
+    desc: "第13回認知科学若手の会ワークショップで発表します．ライトニングトークのセッションです．",
+    title: "言語芸術の美的効果はなぜ生まれる？—計算論的アプローチで迫る—，ライトニングトークセッション1, LT3",
+  },
+  {
+    id: 6,
+    date: "2025/07/30 - 08/03",
+    desc: "CogSci2025@サンフランシスコでポスター発表しました．",
+    title: "Chota Kameya, Tomoki Miyamoto, Akira Utsumi: A computational model of poetry appreciation based on a spreading activation network and the incongruity resolution theory, P2-K-90",
+  },
+  {
+    id: 5,
+    date: "2025/04/10",
+    desc: "CogSci2025に採択されました（ポスター，フルペーパー）．",
+    title: "",
+  },
+  {
+    id: 4,
+    date: "2025/04/04",
+    desc: "電気通信大学大学院博士後期課程に入学しました．",
+    title: "",
+  },
+  {
+    id: 3,
+    date: "2025/03/25",
+    desc: "電気通信大学大学院博士前期課程を修了しました．修士（工学）が授与されました．",
+    title: "",
+  },
+  {
+    id: 2,
+    date: "2024/10/12 - 10/14",
+    desc: "日本認知科学会第41回大会にて発表しました．",
+    title: "亀谷長太，宮本友樹，内海彰: 活性拡散ネットワークとずれの解消理論に基づく詩の鑑賞過程の計算モデル，O-6-4",
+  },
+  {
+    id: 1,
+    date: "2024/08/31",
+    desc: "サイトを開設しました．",
+    title: "",
+  },
+];
 
-    // 今後の予定と過去のニュースに分類
-    // urlプロパティが追加されたため、型定義を更新
-    type NewsItemType = { id: number; date: string; desc: string; title: string; url?: string };
-    const futureNews: NewsItemType[] = news.filter(item => getStartDate(item.date) >= today);
-    const pastNews: NewsItemType[] = news.filter(item => getStartDate(item.date) < today);
+// YYYY/MM/DD形式をローカル日付として解析
+function parseStartDate(dateString: string): Date {
+  const [year, month, day] = dateString
+    .split(" - ")[0]
+    .split("/")
+    .map(Number);
 
-    // ニュース項目をレンダリングする共通コンポーネント
-    const NewsItem = ({ date, desc, title, url }: NewsItemType) => (
-        <div className="space-y-1">
-            <div className="ps-2 my-2 first:mt-0">
-                <h3 className="text-lg font-medium uppercase text-indigo-900">
-                    {date}
-                </h3>
-            </div>
-            <ul className="space-y-1 text-gray-900 list-disc list-inside">
-                <li className="list-disc">
-                    {desc}
-                    {/* urlがあればリンクとして表示 */}
-                    {url && (
-                        <div className="mt-2 text-sm">
-                            <a 
-                                href={url} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="text-blue-600 hover:text-blue-800 underline break-words"
-                            >
-                                {url}
-                            </a>
-                        </div>
-                    )}
-                    {title && (
-                        <blockquote className="mt-2 pl-4 py-2 border-l-4 border-gray-300 bg-gray-50">
-                            <p className="text-gray-800 italic">{title}</p>
-                        </blockquote>
-                    )}
-                </li>
-            </ul>
-        </div>
-    );
-
-    return (
-        <div id="recent" className="scroll-mt-20 flex justify-center mb-16">
-            <div className="w-full max-w-4xl">
-                <h2 className="text-4xl font-semibold flex justify-center items-center mb-14">NEWS</h2>
-
-                {/* Future Section */}
-                {futureNews.length > 0 && (
-                     <div className="mb-16">
-                        <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">今後の予定</h3>
-                        {futureNews.map(item => <NewsItem {...item} key={item.id} />)}
-                    </div>
-                )}
-                    
-                {/* Past Section */}
-                <div>
-                    {futureNews.length > 0 && (
-                        <h3 className="text-2xl font-bold mb-6 text-left border-b-2 pb-2">過去のお知らせ</h3>
-                    )}
-                    <div className="space-y-8">
-                        {pastNews.map(item => <NewsItem {...item} key={item.id} />)}
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+  return new Date(year, month - 1, day);
 }
 
-export default Recent;
+function formatDate(dateString: string): string {
+  return dateString.replaceAll("/", ".");
+}
+
+function NewsEntry({ item }: { item: NewsItem }) {
+  return (
+    <article className="group grid grid-cols-1 gap-3 border-b border-[#D8D5CE] py-7 first:pt-0 sm:grid-cols-[130px_minmax(0,1fr)] sm:gap-8">
+
+      {/* Date */}
+      <div>
+        <time
+          dateTime={parseStartDate(item.date).toLocaleDateString(
+            "sv-SE"
+          )}
+          className="font-mono text-xs tracking-wide text-[#918A80] sm:text-sm"
+        >
+          {formatDate(item.date)}
+        </time>
+      </div>
+
+      {/* Content */}
+      <div className="min-w-0 space-y-3">
+
+        <p className="text-sm font-medium leading-7 text-[#33312D] sm:text-base">
+          {item.desc}
+        </p>
+
+        {item.title && (
+          <p className="text-sm leading-7 text-[#777168]">
+            {item.title}
+          </p>
+        )}
+
+        {item.url && (
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border-b border-[#A79D90] pb-1 text-xs font-medium tracking-wide text-[#675E52] transition-colors duration-200 hover:border-[#242424] hover:text-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+          >
+            View publication
+            <span aria-hidden="true">↗</span>
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
+
+export default function Recent() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const sortedNews = [...news].sort(
+    (a, b) =>
+      parseStartDate(b.date).getTime() -
+      parseStartDate(a.date).getTime()
+  );
+
+  const futureNews = sortedNews.filter(
+    (item) => parseStartDate(item.date) > today
+  );
+
+  const pastNews = sortedNews.filter(
+    (item) => parseStartDate(item.date) <= today
+  );
+
+  return (
+    <div id="recent" className="w-full scroll-mt-24">
+
+      {/* Archive metadata */}
+      <div className="mb-10 flex items-center justify-between gap-4 text-xs text-[#918A80]">
+        <span className="font-mono tracking-wide">
+          ARCHIVE / NEWS
+        </span>
+        <span className="font-mono">
+          {String(news.length).padStart(2, "0")} ENTRIES
+        </span>
+      </div>
+
+      {/* Upcoming */}
+      {futureNews.length > 0 && (
+        <section className="mb-14">
+          <h2 className="mb-7 text-lg font-medium text-[#242424]">
+            Upcoming
+          </h2>
+
+          <div className="border-t border-[#B7B1A7]">
+            {futureNews.map((item) => (
+              <NewsEntry key={item.id} item={item} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Archive */}
+      <section>
+        {futureNews.length > 0 && (
+          <h2 className="mb-7 text-lg font-medium text-[#242424]">
+            Archive
+          </h2>
+        )}
+
+        <div className="border-t border-[#B7B1A7]">
+          {pastNews.map((item) => (
+            <NewsEntry key={item.id} item={item} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
