@@ -84,12 +84,6 @@ export default function Biography() {
                 {item.desc}
               </p>
 
-              {/* Supervisor */}
-              {item.lab && (
-                <p className="text-xs leading-6 text-[#918A80]">
-                  {item.lab}
-                </p>
-              )}
             </div>
           </article>
         ))}
