@@ -3,7 +3,6 @@ type Education = {
   id: number;
   date: string;
   jp: string;
-  lab: string;
   desc: string;
 };
 
