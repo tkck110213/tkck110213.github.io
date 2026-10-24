@@ -1,43 +1,81 @@
-// ★★★ ここに型定義を記述します ★★★
+
 type HeaderProps = {
   activeContent: string;
   setActiveContent: (content: string) => void;
 };
 
-const Header = ({ activeContent, setActiveContent }: HeaderProps) => {
-    
-  const getLinkClass = (contentName: string) => {
-    return activeContent === contentName
-      ? "mr-5 text-gray-900 font-semibold border-b-2 border-gray-900"
-      : "mr-5 hover:text-gray-900";
-  };
+const navItems = [
+  { id: "news", label: "News" },
+  { id: "educations", label: "Biography" },
+  { id: "publications", label: "Publications" },
+  { id: "awards", label: "Awards" },
+];
 
-  return(
-    <header className="sticky top-0 z-50 bg-[#F9F9F9] text-gray-600 body-font shadow-md">
-      <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <span className="ml-3 text-xl">Chota Kameya</span>
-        </a>
-        <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-          <button onClick={() => setActiveContent('news')} className={getLinkClass('news')}>
-            News
-          </button>
-          <button onClick={() => setActiveContent('educations')} className={getLinkClass('educations')}>
-            Educations
-          </button>
-          <button onClick={() => setActiveContent('publications')} className={getLinkClass('publications')}>
-            Publications
-          </button>
-          <button onClick={() => setActiveContent('awards')} className={getLinkClass('awards')}>
-            Awards
-          </button>
-          <button onClick={() => setActiveContent('works')} className={getLinkClass('works')}>
-            Works
-          </button>
+export default function Header({
+  activeContent,
+  setActiveContent,
+}: HeaderProps) {
+  return (
+    <header className="w-full">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 py-5 sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+
+        {/* Brand */}
+        <button
+          type="button"
+          onClick={() => setActiveContent("news")}
+          className="w-fit font-serif text-lg font-medium tracking-tight text-[#242424] transition-opacity hover:opacity-60 focus-visible:rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A79D90]"
+          aria-label="Chota Kameya - News"
+        >
+          Chota Kameya
+          <span className="text-[#A79D90]">.</span>
+        </button>
+
+        {/* Navigation */}
+        <nav
+          aria-label="Main navigation"
+          className="flex items-center gap-x-6 gap-y-2 overflow-x-auto sm:gap-x-8"
+        >
+          {navItems.map((item) => {
+            const isActive = activeContent === item.id;
+
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => setActiveContent(item.id)}
+                aria-current={isActive ? "page" : undefined}
+                className={`
+                  relative shrink-0 whitespace-nowrap
+                  pb-2 pt-1 text-sm
+                  transition-colors duration-200
+                  focus-visible:rounded-sm
+                  focus-visible:outline
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-[#A79D90]
+                  ${
+                    isActive
+                      ? "font-medium text-[#242424]"
+                      : "font-normal text-[#918A80] hover:text-[#242424]"
+                  }
+                `}
+              >
+                {item.label}
+
+                {/* Active underline */}
+                <span
+                  aria-hidden="true"
+                  className={`
+                    absolute bottom-0 left-0 h-px w-full
+                    bg-[#242424] transition-opacity duration-200
+                    ${isActive ? "opacity-100" : "opacity-0"}
+                  `}
+                />
+              </button>
+            );
+          })}
         </nav>
       </div>
     </header>
   );
 }
-
-export default Header;
