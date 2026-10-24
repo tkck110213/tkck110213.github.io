@@ -227,7 +227,7 @@ export default function Archivements() {
                 </div>
 
                 <span className="font-mono text-xs text-[#918A80]">
-                  {String(section.items.length).padStart(2, "0")} ENTRIES
+                  全 {String(section.items.length)} 件
                 </span>
               </div>
 
