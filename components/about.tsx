@@ -98,6 +98,6 @@ export default function About() {
         );
       })}
     </div>
-
+  </div> {/* 最初のdivを閉じる */}
   );
 }
