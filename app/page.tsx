@@ -92,13 +92,6 @@ export default function Home() {
           aria-labelledby="profile-title"
           className="scroll-mt-32 border-b border-[#D8D5CE] py-12 md:scroll-mt-24 md:py-16"
         >
-          <div className="mb-8 flex items-center gap-4">
-            <span className="font-mono text-xs text-[#918A80]">
-              01 / ABOUT
-            </span>
-            <span className="h-px flex-1 bg-[#D8D5CE]" />
-          </div>
-
           <h2 id="profile-title" className="sr-only">
             About
           </h2>
@@ -115,18 +108,22 @@ export default function Home() {
               aria-labelledby={`${section.id}-title`}
               className="scroll-mt-32 border-b border-[#D8D5CE] py-16 md:scroll-mt-24 md:py-24"
             >
-              {/* Section heading */}
-              <div className="mb-12">
-
-                {/* Section metadata */}
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-                  <span className="font-mono text-xs tracking-wide text-[#918A80]">
-                    {section.number} / INDEX
-                  </span>
-
-                  <span className="text-xs text-[#918A80]">
-                    {section.description}
-                  </span>
+              
+                {/* Section heading */}
+                <div className="mb-10 md:mb-12">
+                  <div className="flex items-center gap-5 rounded-sm bg-[#EDEAE4] px-6 py-7 sm:px-8 sm:py-9">
+                
+                    {/* Accent line */}
+                    <span className="h-9 w-[3px] shrink-0 rounded-full bg-[#9B8B77]" />
+                
+                    {/* Title */}
+                    <h2
+                      id={`${section.id}-title`}
+                      className="font-serif text-4xl font-normal tracking-tight text-[#242424] sm:text-5xl"
+                    >
+                      {section.title}
+                    </h2>
+                  </div>
                 </div>
 
                 {/* Title */}
