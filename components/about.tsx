@@ -1,58 +1,103 @@
-import { FaGithub, FaEnvelope, FaOrcid, FaAddressCard } from 'react-icons/fa';
-import { SiZenn, SiGooglescholar } from 'react-icons/si'; 
+
+import {
+  FaGithub,
+  FaEnvelope,
+  FaOrcid,
+  FaAddressCard,
+} from "react-icons/fa";
+import { SiGooglescholar } from "react-icons/si";
 import Image from "next/image";
 
-const About = () => {
-    return (
-        <div id="about" className="flex flex-col items-center">
-            <div className="flex items-center gap-4">
-                <Image
-                    className="w-16 h-16 rounded-full object-cover"
-                    src="/profile.jpg"
-                    alt="Profile"
-                />
-                <div className="flex flex-col">
-                    <h2 className="text-xl font-bold text-gray-800">Chota Kameya</h2>
-                    <p className="text-gray-500 text-center">Ph.D. student</p>
-                </div>
-            </div>
-            <p className="mt-4 text-gray-500 text-center">The University of Electro-Communications</p>
-            <p className="mt-4 text-gray-700">
-                芸術の美的鑑賞プロセスと認知モデルに関心があります．主に認知科学の分野で活動しています．
-            </p>
-            <div className="mt-4 flex flex-col space-y-4 text-gray-600">
-              <a href="https://github.com/tkck110213" aria-label="GitHub" className="flex items-center space-x-3 hover:text-gray-900">
-                <FaGithub size={24} />
-                <span className="font-medium">GitHub</span>
-              </a>
-            
-              {/* <a href="https://zenn.dev/tkck110213" aria-label="Zenn" className="flex items-center space-x-3 hover:text-gray-900">
-                <SiZenn size={24} />
-                <span className="font-medium">Zenn</span>
-              </a> */}
-            
-              <a href="https://researchmap.jp/c.kameya" aria-label="Researchmap" className="flex items-center space-x-3 hover:text-gray-900">
-                <FaAddressCard size={24} />
-                <span className="font-medium">Researchmap</span>
-              </a>
-            
-              <a href="mailto:c.kameya@uec.ac.jp" aria-label="Email" className="flex items-center space-x-3 hover:text-gray-900">
-                <FaEnvelope size={24} />
-                <span className="font-medium">Email</span>
-              </a>
-            
-              <a href="https://scholar.google.com/citations?user=uneQLVYAAAAJ" aria-label="Google Scholar" className="flex items-center space-x-3 hover:text-gray-900">
-                <SiGooglescholar size={24} />
-                <span className="font-medium">Google Scholar</span>
-              </a>
-            
-              <a href="https://orcid.org/0009-0009-3290-0349" aria-label="ORCID" className="flex items-center space-x-3 hover:text-gray-900">
-                <FaOrcid size={24} />
-                <span className="font-medium">ORCID</span>
-              </a>
-            </div>
-        </div>
-    );
-}
+const links = [
+  {
+    name: "GitHub",
+    url: "https://github.com/tkck110213",
+    icon: FaGithub,
+  },
+  {
+    name: "Researchmap",
+    url: "https://researchmap.jp/c.kameya",
+    icon: FaAddressCard,
+  },
+  {
+    name: "Email",
+    url: "mailto:c.kameya@uec.ac.jp",
+    icon: FaEnvelope,
+  },
+  {
+    name: "Google Scholar",
+    url: "https://scholar.google.com/citations?user=uneQLVYAAAAJ",
+    icon: SiGooglescholar,
+  },
+  {
+    name: "ORCID",
+    url: "https://orcid.org/0009-0009-3290-0349",
+    icon: FaOrcid,
+  },
+];
 
-export default About;
+export default function About() {
+  return (
+    <div id="about" className="w-full max-w-4xl">
+
+      {/* Profile */}
+      <div className="flex items-center gap-5">
+        <Image
+          src="/profile.jpg"
+          alt="Chota Kameya"
+          width={80}
+          height={80}
+          priority
+          className="h-20 w-20 shrink-0 rounded-full object-cover"
+        />
+
+        <div>
+          <h1 className="font-serif text-3xl font-normal tracking-tight text-[#242424]">
+            Chota Kameya
+          </h1>
+
+          <p className="mt-1 text-sm text-[#777168]">
+            Ph.D. Student
+          </p>
+
+          <p className="mt-1 text-sm text-[#777168]">
+            The University of Electro-Communications
+          </p>
+        </div>
+      </div>
+
+      {/* Introduction */}
+      <p className="mt-8 max-w-2xl text-sm leading-8 text-[#494640] sm:text-base">
+        芸術の美的鑑賞プロセスと認知モデルに関心があります.
+        主に認知科学の分野で活動しています.
+      </p>
+      
+    {/* Social links */}
+    <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-4 sm:gap-x-7">
+      {links.map(({ name, url, icon: Icon }) => {
+        const isExternal = !url.startsWith("mailto:");
+    
+        return (
+          <a
+            key={name}
+            href={url}
+            target={isExternal ? "_blank" : undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            aria-label={name}
+            className="inline-flex shrink-0 items-center gap-2 rounded-md text-sm text-[#777168] transition-colors duration-200 hover:text-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#A79D90]"
+          >
+            <Icon
+              size={18}
+              className="shrink-0"
+              aria-hidden="true"
+            />
+            <span className="whitespace-nowrap">
+              {name}
+            </span>
+          </a>
+        );
+      })}
+    </div>
+
+  );
+}
