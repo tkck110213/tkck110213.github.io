@@ -9,19 +9,14 @@ import Image from "next/image";
 
 const links = [
   {
-    name: "GitHub",
-    url: "https://github.com/tkck110213",
-    icon: FaGithub,
+    name: "Email",
+    url: "mailto:c.kameya@uec.ac.jp",
+    icon: FaEnvelope,
   },
   {
     name: "Researchmap",
     url: "https://researchmap.jp/c.kameya",
     icon: FaAddressCard,
-  },
-  {
-    name: "Email",
-    url: "mailto:c.kameya@uec.ac.jp",
-    icon: FaEnvelope,
   },
   {
     name: "Google Scholar",
@@ -32,6 +27,11 @@ const links = [
     name: "ORCID",
     url: "https://orcid.org/0009-0009-3290-0349",
     icon: FaOrcid,
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/tkck110213",
+    icon: FaGithub,
   },
 ];
 
@@ -55,15 +55,13 @@ export default function About() {
         {/* Name and affiliation */}
         <div className="min-w-0">
           <h1 className="font-serif text-2xl font-normal tracking-tight text-[#242424] sm:text-3xl">
-            亀谷長太 (Chota Kameya)
+            亀谷 長太 (Chota Kameya)
           </h1>
-
-          <p className="mt-1 text-sm text-[#777168]">
-            Ph.D. Student
-          </p>
-
           <p className="mt-1 text-sm leading-relaxed text-[#777168]">
             電気通信大学 / The University of Electro-Communications
+          </p>
+          <p className="mt-1 text-sm text-[#777168]">
+            Ph.D. Student
           </p>
         </div>
       </div>
